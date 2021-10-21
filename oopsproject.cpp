@@ -11,12 +11,12 @@ using namespace std;
  				int i,j;
  				int x,y;
  				int temp,count=1;
- 				float small=0;
+ 				float large=0;
  				void calc()
  				{
- 					cout<<"enter the number of breeds"<<endl;
+ 					cout<<"enter the number of slots"<<endl;
  					cin>>x;
- 					cout<<"enter the quantity of seeds in each breed for testing"<<endl;
+ 					cout<<"enter the quantity of missiles in each slot for testing"<<endl;
  					cin>>y;
  					float a[100][100];
  					float sum[100];
@@ -26,7 +26,7 @@ using namespace std;
  					float vari=0;
  					for(i=0;i<x;i++)
  					{
- 						cout<<"enter the depth of seeds in cm for breed "<<i+1<<endl;
+ 						cout<<"enter the range of missiles for slot "<<i+1<<endl;
  						for(j=0;j<y;j++)
  						{
  							cin>>a[i][j];
@@ -66,24 +66,23 @@ using namespace std;
 					  	cout<<"the variance about mean of depth of seeds is "<<var[i]<<endl;
 					  	cout<<endl<<endl<<endl;
 					  }
-					  small=avg[0];
+					  large=avg[0];
 					  for(i=1;i<x;i++)
 					  {
 					  	
-						if(small>avg[i])
+						if(large<avg[i])
 						{
-							small=avg[i];
+							large=avg[i];
 							count=i+1;
 						 }					  	
 					  }
 					  cout<<endl<<endl<<endl;
-					  //if(temp=10000)
-					  //cout<<"all are good breeds"<<endl<<endl;
-					  cout<<"  "<<small<<endl;;
+					  
+					  cout<<"  "<<large<<endl;;
 					  cout<<"  "<<count<<"is the best breed "<<endl;
-					  cout<<"for checking the best breed follow the following steps "<<endl;
-					  cout<<"average number of seeds to should be less "<<endl;
-					  cout<<"if the average number of seeds are same while comparing two breeds then go for variance "<<endl;
+					  cout<<"for checking the best slot follow the following steps "<<endl;
+					  cout<<"average range of missiles in slot  to should be high "<<endl;
+					  cout<<"if the average range  of missiles  are same while comparing two slots then go for variance "<<endl;
 					  cout<<"lower is the variance lower will be the spread of seeds and hence better is the breed "<<endl;
 					  cout<<endl<<endl<<endl<<endl;
 				}
